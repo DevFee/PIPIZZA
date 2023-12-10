@@ -8,7 +8,7 @@
 :root {
   background: #f1f0f0;
   scroll-behavior: smooth;
-  scroll-padding-top: 6.5rem;
+  scroll-padding-top: 2rem;
 }
 
 .Header_roll {
@@ -30,12 +30,13 @@
 
 header {
   width: 100%;
+  height: 70px;
   top: 0;
   transition: all 0.5s;
   position: fixed;
   display: flex;
   z-index: 1;
-  padding: 2rem;
+  padding: 1.5rem;
   background: transparent;
   align-items: center;
   align-content: center;
@@ -46,6 +47,7 @@ header h1 {
 header h1 a {
   color: rgb(248, 248, 248);
   font-weight: 800;
+  font-size: 24px;
   font-family: sans-serif;
   text-decoration: none;
 }
@@ -65,8 +67,8 @@ header nav ul li {
 header nav ul li a {
   text-decoration: none;
   color: rgb(248, 248, 248);
-  font-size: 22px;
-  padding: 0.9rem 3.6rem;
+  font-size: 18px;
+  padding: 0.8rem 2.7rem;
   border-radius: 0.3rem;
   font-family: sans-serif;
   transition: all 0.4s;
@@ -77,7 +79,7 @@ header nav ul li a {
   background: rgb(255, 81, 0);
   font-weight: 800;
   position: relative;
-  font-size: 45px;
+  font-size: 32px;
 }
 
 .apresentacao {
@@ -86,7 +88,7 @@ header nav ul li a {
   align-items: center;
   background: url("./assets/homewpp.jpg");
   width: 100%;
-  height: 809px;
+  height: 650px;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -94,16 +96,25 @@ header nav ul li a {
   visibility: hidden;
   color: rgb(240, 240, 240);
   font-weight: 800;
-  font-size: 32px;
+  font-size: 24px;
   margin: 0 0 0 30px;
   text-align: center;
 }
 
+#sobre {
+  text-align: center;
+  padding: 1rem 0;
+}
+#sobre h1 {
+  font-size: 32px;
+}
+
 #menu {
+  position: relative;
   padding: 1rem;
 }
 #menu h2 {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 800;
   color: rgb(26, 26, 26);
   padding: 1.5rem 0;
@@ -113,6 +124,7 @@ header nav ul li a {
   display: flex;
   flex-wrap: wrap;
   padding: 2rem;
+  gap: 2rem;
   flex-grow: 1;
   align-content: center;
   justify-content: space-evenly;
@@ -122,7 +134,9 @@ header nav ul li a {
   position: relative;
   flex-direction: column;
   align-items: center;
-  width: 400px;
+  width: 320px;
+  height: -moz-fit-content;
+  height: fit-content;
   border-radius: 1rem;
   overflow: hidden;
   padding: 0px 0px 2rem 0;
@@ -141,12 +155,12 @@ header nav ul li a {
 }
 #menu .Pizzas .card img {
   width: 100%;
-  height: 21rem;
+  height: 15rem;
   transition: all 0.5s;
 }
 #menu .Pizzas .card .foto-nome {
   padding: 0rem 2rem;
-  top: 20%;
+  top: 13%;
   width: 100%;
   position: absolute;
   text-align: center;
@@ -154,12 +168,11 @@ header nav ul li a {
 #menu .Pizzas .card .foto-nome h1 {
   font-family: "Afacad";
   font-weight: 500;
-  font-style: italic;
   transition: all 0.4s;
   z-index: 2;
   font-size: 3.5rem;
   opacity: 0;
-  text-shadow: 0.5rem 0rem 0.3rem rgba(0, 0, 0, 0.597);
+  text-shadow: 0rem 0.3rem 0.3rem rgba(0, 0, 0, 0.597);
   color: rgb(240, 240, 240);
 }
 #menu .Pizzas .card .descricao {
@@ -169,13 +182,18 @@ header nav ul li a {
   gap: 20px;
 }
 #menu .Pizzas .card .descricao h1 {
-  font-size: 25px;
+  font-size: 16px;
 }
 #menu .Pizzas .card .descricao .ingredientes {
   padding: 0 1.5rem;
   display: flex;
   flex-direction: column;
   font-size: 18px;
+}
+#menu .Pizzas .card .descricao h4 {
+  position: absolute;
+  right: 10%;
+  color: rgb(26, 26, 26);
 }
 #menu .Pizzas .card a {
   position: relative;
