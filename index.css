@@ -8,11 +8,11 @@
 :root {
   background: #f1f0f0;
   scroll-behavior: smooth;
-  scroll-padding-top: 2rem;
+  scroll-padding-top: 4rem;
 }
 
 .Header_roll {
-  background: #ffffff;
+  background: #f1f0f0;
   transition: all 0.5s;
   box-shadow: 0.4rem 0.3rem 0.8rem rgba(0, 0, 0, 0.09);
 }
@@ -78,8 +78,15 @@ header nav ul li a {
   padding: 0 1rem;
   background: rgb(255, 81, 0);
   font-weight: 800;
+  font-family: "afacad";
+  font-style: italic;
   position: relative;
   font-size: 32px;
+}
+
+.destaque2 {
+  color: rgb(255, 81, 0);
+  font-size: 22px;
 }
 
 .apresentacao {
@@ -107,6 +114,8 @@ header nav ul li a {
 }
 #sobre h1 {
   font-size: 32px;
+  font-weight: 400;
+  font-family: "Afacad";
 }
 
 #menu {
@@ -115,10 +124,11 @@ header nav ul li a {
 }
 #menu h2 {
   font-size: 24px;
-  font-weight: 800;
   color: rgb(26, 26, 26);
   padding: 1.5rem 0;
   text-align: center;
+  font-weight: 400;
+  font-family: "Afacad";
 }
 #menu .Pizzas {
   display: flex;
@@ -133,6 +143,7 @@ header nav ul li a {
   display: flex;
   position: relative;
   flex-direction: column;
+  cursor: default;
   align-items: center;
   width: 320px;
   height: -moz-fit-content;
@@ -167,7 +178,7 @@ header nav ul li a {
 }
 #menu .Pizzas .card .foto-nome h1 {
   font-family: "Afacad";
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.4s;
   z-index: 2;
   font-size: 3.5rem;
@@ -230,6 +241,67 @@ header nav ul li a {
 }
 #menu .Pizzas .card a:hover {
   color: rgb(240, 240, 240);
+}
+
+#contato {
+  background: #0f1016;
+  color: rgba(255, 255, 255, 0.659);
+  text-align: center;
+}
+#contato h3 {
+  font-family: "afacad";
+  font-weight: 400;
+}
+#contato h6 {
+  font-weight: 100;
+}
+#contato .redes-footer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  color: rgb(240, 240, 240);
+}
+#contato .redes-footer nav ul {
+  margin: 0.5rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  justify-content: center;
+  gap: 1rem;
+}
+#contato .redes-footer nav ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#contato .redes-footer nav ul li a {
+  width: 130px;
+  color: rgb(240, 240, 240);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+  font-size: 14px;
+  text-decoration: none;
+  background: rgba(47, 47, 47, 0.2);
+  transition: all 0.5s;
+}
+#contato .redes-footer nav ul li a:hover {
+  background: rgba(68, 68, 68, 0.2);
+}
+#contato .redes-footer nav button {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.4rem 2rem;
+  border: none;
+  background: purple;
+  color: rgb(240, 240, 240);
+  font-style: italic;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+#contato .redes-footer nav button:hover {
+  background: rgb(183, 0, 183);
 }
 
 @media (max-width: 1068px) {

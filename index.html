@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;1,400;1,500&family=Kalnia:wght@100;200;300&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/scrollreveal"></script>
     <title>PIPIZZA</title>
+    <link rel="shortcut icon" href="./assets/PIPIZZALOGO.png" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -20,21 +21,24 @@
             <ul class="menuHeader">
                 <li class="opcao-menu-header"><a href="#menu">Pizzas!</a></li>
                 <li class="opcao-menu-header"><a href="#sobre">Sobre</a></li>
-                <li class="opcao-menu-header"><a href="#">Contato</a></li>
+                <li class="opcao-menu-header"><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
     <main class="apresentacao">
         <h1 class="slogan">
-            Aproveite a vida com mais <br><tag class="destaque">SABOR!</tag>
+            Aproveite a vida com mais <br><span class="destaque">SABOR!</span>
         </h1>
     </main>
     <section id="sobre">
-        <h1>Sobre</h1>
+        <section>
+            <article></article>
+            <article></article>
+        </section>
     </section>
     <section id="menu">
         <h2>
-            Escolha seu modo de ser feliz aqui!
+            Escolha seu modo de ser <span class="destaque2">feliz</span> aqui!
         </h2>
         <article class="Pizzas">
             <section class="card">
@@ -43,7 +47,7 @@
                     <h1>Calabresa</h1>
                 </div>
                 <div class="descricao">
-                    <h4>R$49,99</h4>
+                    <h4>R$39,99</h4>
                     <h1>
                         Descrição:
                     </h1>
@@ -63,7 +67,7 @@
                     <h1>Catupiry</h1>
                 </div>
                 <div class="descricao">
-                    <h4>R$59,99</h4>
+                    <h4>R$49,99</h4>
                     <h1>
                         Descrição:
                     </h1>
@@ -83,7 +87,7 @@
                     <h1>4 Queijos</h1>
                 </div>
                 <div class="descricao">
-                    <h4>R$49,99</h4>
+                    <h4>R$44,99</h4>
                     <h1>
                         Descrição:
                     </h1>
@@ -103,7 +107,7 @@
                     <h1>A Moda</h1>
                 </div>
                 <div class="descricao">
-                    <h4>R$64,99</h4>
+                    <h4>R$49,99</h4>
                     <h1>
                         Descrição:
                     </h1>
@@ -123,7 +127,7 @@
                     <h1>Marguerita</h1>
                 </div>
                 <div class="descricao">
-                    <h4>R$44,99</h4>
+                    <h4>R$34,99</h4>
                     <h1>
                         Descrição:
                     </h1>
@@ -159,8 +163,19 @@
             </section>
         </article>
     </section>
-    <footer>
-        footer aqui
+    <footer id="contato">
+        <article class="redes-footer">
+            <h3>Social</h3>
+            <nav>   
+                <ul>
+                    <li><a target="_blank" href="https://mail.google.com/mail/u/0/#inbox?compose=new">Gmail</a></li>
+                    <button onclick="copygmail()">Copy email</button>
+                    <li><a target="_blank" href="https://gmail.com">Instagram</a></li>
+                    <li><a target="_blank" href="https://gmail.com">TikTok</a></li>
+                </ul>
+            </nav>
+        </article>
+        <h6>© 2023 fallhaha</h6>
     </footer>
     
     <script src="./script.js"></script>

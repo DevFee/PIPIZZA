@@ -3,6 +3,7 @@ $pc2: rgb(50, 190, 9);
 $pc3: #3e3e3e;
 $pc1text: rgb(240, 240, 240);
 $pc2text: rgb(26, 26, 26);
+$pc3text: rgba(255, 255, 255, 0.659);
 $pc1header: rgb(248, 248, 248);
 $hoverbc2: #e8e8e8;
 $hoverpc1: #2d2d2d;
@@ -10,6 +11,9 @@ $bc4: #ffffff;
 $bc1: #fefefeb8;
 $bc2: #f1f0f0;
 $bc3: #e4e4e4;
+$bc4: #0f1016;
+$bc5: #2f2f2f33;
+$bc6: #44444433;
 $sh1: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.05);
 $sh2: 0.4rem 0.3rem 0.8rem rgba(0, 0, 0, 0.09);
 $sh3: 0rem 0.3rem 0.3rem rgba(0, 0, 0, 0.597);
@@ -24,11 +28,11 @@ $sh3: 0rem 0.3rem 0.3rem rgba(0, 0, 0, 0.597);
 :root{
     background: $bc2;
     scroll-behavior: smooth;
-    scroll-padding-top: 2rem;
+    scroll-padding-top: 4rem;
 }
 
 .Header_roll{
-    background: $bc4;
+    background: $bc2;
     transition: all 0.5s;
     box-shadow: $sh2;
     h1{
@@ -102,8 +106,14 @@ header{
     padding: 0 1rem;
     background: $pc;
     font-weight: 800;
+    font-family: 'afacad';
+    font-style: italic;
     position: relative;
     font-size: 32px;
+}
+.destaque2{
+    color: $pc;
+    font-size: 22px;
 }
 
 .apresentacao{
@@ -130,6 +140,8 @@ header{
     padding: 1rem 0;
     h1{
         font-size: 32px;
+        font-weight: 400;
+        font-family: "Afacad";
     }
 }
 
@@ -138,10 +150,11 @@ header{
     padding: 1rem;
     h2{
         font-size: 24px;
-        font-weight: 800;
         color: $pc2text;
         padding: 1.5rem 0;
         text-align: center;
+        font-weight: 400;
+        font-family: "Afacad";
     }
     .Pizzas{
         display: flex;
@@ -155,6 +168,7 @@ header{
             display: flex;
             position: relative;
             flex-direction: column;
+            cursor: default;
             align-items: center;
             width: 320px;
             height: fit-content;
@@ -186,7 +200,7 @@ header{
                 text-align: center;
                 h1{
                     font-family: "Afacad";
-                    font-weight: 500;
+                    font-weight: 600;
                     transition: all 0.4s;
                     z-index: 2;
                     font-size: 3.5rem;
@@ -254,6 +268,67 @@ header{
     }    
 }
 
+#contato{
+    background: $bc4;
+    color: $pc3text;
+    text-align: center;
+    h3{
+        font-family: "afacad";
+        font-weight: 400;
+    }
+    h6{
+        font-weight: 100;
+    }
+    .redes-footer{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        color: $pc1text;
+        nav{
+            ul{
+                margin: 0.5rem 0 0 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                list-style: none;
+                justify-content: center;
+                gap: 1rem;
+                li{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    a{
+                        width: 130px;
+                        color: $pc1text;
+                        border-radius: 0.5rem;
+                        padding: 0.5rem 0;
+                        font-size: 14px;
+                        text-decoration: none;
+                        background: $bc5;
+                        transition: all 0.5s;
+                        &:hover{
+                            background: $bc6;
+                        }
+                    }
+                }
+            }
+            button{
+                width: fit-content;
+                padding: 0.4rem 2rem;
+                border: none;
+                background: purple;
+                color: $pc1text;
+                font-style: italic;
+                border-radius: 0.5rem;
+                cursor: pointer;
+                transition: all 0.5s;
+                &:hover{
+                    background: rgb(183, 0, 183);
+                }
+            }
+        }
+    }
+}
 
 @media (max-width: 1068px){
     header{
