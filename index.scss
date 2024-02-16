@@ -132,6 +132,7 @@ header{
         color: $pc1text;
         font-weight: 800;
         font-size: 24px;
+        visibility: hidden;
         text-align: center;
     }
     display: flex;
@@ -145,6 +146,7 @@ header{
 }
 
 #menu{
+    visibility: hidden;
     position: relative;
     padding: 1rem;
     h2{

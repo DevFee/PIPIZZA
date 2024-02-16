@@ -114,10 +114,12 @@ header nav ul li a {
   color: rgb(240, 240, 240);
   font-weight: 800;
   font-size: 24px;
+  visibility: hidden;
   text-align: center;
 }
 
 #menu {
+  visibility: hidden;
   position: relative;
   padding: 1rem;
 }
