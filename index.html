@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <script src="./script.js"></script>
     <header>
         <h1>
             <a href="#">PIPIZZA!</a>
@@ -20,16 +21,13 @@
         <nav>
             <ul class="menuHeader">
                 <li class="opcao-menu-header"><a href="#menu">Pizzas</a></li>
-                <li class="opcao-menu-header dropdown">
-                    <a href="#Adicionais">Adicionais</a>
-                </li>
                 <li class="opcao-menu-header"><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
     <main class="apresentacao">
         <h1 class="slogan">
-            Aproveite a vida com mais <br><span class="destaque">SABOR!</span>
+            Delícias em cada fatia, na sua pizzaria <br><span class="destaque">PREFERIDA!</span>
         </h1>
     </main>
     <section id="menu">
@@ -55,7 +53,7 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a href="https://github.com/DevFee" target="_blank">Comprar!</a>
+                <a onclick="aparecerpopup()">Comprar!</a>
             </section>
             <section class="card">
                 <img src="./assets/catupiry.jpg" alt="" srcset="">
@@ -75,7 +73,7 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a href="https://github.com/DevFee" target="_blank">Comprar!</a>
+                <a onclick="aparecerpopup()">Comprar!</a>
             </section>
             <section class="card">
                 <img src="./assets/4queijos.jpg" alt="" srcset="">
@@ -95,7 +93,7 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a href="https://github.com/DevFee" target="_blank">Comprar!</a>
+                <a onclick="aparecerpopup()">Comprar!</a>
             </section>
             <section class="card">
                 <img src="./assets/amoda.jpg" alt="" srcset="">
@@ -115,7 +113,7 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a href="https://github.com/DevFee" target="_blank">Comprar!</a>
+                <a onclick="aparecerpopup()">Comprar!</a>
             </section>
             <section class="card">
                 <img src="./assets/marguerita.jpg" alt="" srcset="">
@@ -135,7 +133,7 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a href="https://github.com/DevFee" target="_blank">Comprar!</a>
+                <a onclick="aparecerpopup()">Comprar!</a>
             </section>
             <section class="card">
                 <img src="./assets/mussarela.jpg" alt="" srcset="">
@@ -155,22 +153,8 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a href="https://github.com/DevFee" target="_blank">Comprar!</a>
+                <a onclick="aparecerpopup()">Comprar!</a>
             </section>
-        </article>
-    </section>
-    <section id="Adicionais">
-        <h1>Aproveite mais sua pizza com nossos complementos</h1>
-        <h6>
-            A cada 50 reais gastos em pizza em nosso site você ganha 47% de
-            desconto em complementos. 
-        </h6>
-        <article class="Bebidas">
-            <img src="./assets/calabresa.jpg" alt="" srcset="">
-
-        </article>
-        <article class="Sobremesas">
-
         </article>
     </section>
     <footer id="contato">
@@ -178,15 +162,17 @@
             <h3>Social</h3>
             <nav>   
                 <ul>
+                    <button onclick="copygmail()">Copiar email</button>
                     <li><a target="_blank" href="https://mail.google.com/mail/u/0/#inbox?compose=new">Gmail</a></li>
-                    <button onclick="copygmail()">Copy email</button>
                     <li><a target="_blank" href="https://github.com/DevFee">Github</a></li>
                 </ul>
             </nav>
         </article>
         <h6>© 2023 DevFee</h6>
     </footer>
-    
-    <script src="./script.js"></script>
+    <div class="popup">
+        <h1>Compra realizada!</h1>
+        <button onclick="fecharpopup()">Fechar</button>
+    </div>
 </body>
 </html>

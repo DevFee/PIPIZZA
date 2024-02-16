@@ -1,4 +1,5 @@
 window.sr = ScrollReveal({ reset: true })
+const popup = document.querySelector(".popup")
 
 sr.reveal("#menu", {duration: 1500})
 sr.reveal("#sobre", {duration: 1500})
@@ -8,7 +9,6 @@ sr.reveal(".card", {duration: 1500})
 
 window.addEventListener('scroll',()=>{
     document.querySelector("header").classList.toggle("Header_roll", window.scrollY > 0)
-    document.querySelector(".op-inicio").classList.toggle("visivel", window.scrollY > 0)
 })
 
 function copygmail(){
@@ -17,3 +17,10 @@ function copygmail(){
     })
 }
 
+function fecharpopup(){
+    document.querySelector(".popup").style.scale = 0
+}
+
+function aparecerpopup(){
+    document.querySelector(".popup").style.scale = 1
+}
