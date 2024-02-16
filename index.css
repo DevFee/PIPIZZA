@@ -363,7 +363,7 @@ header nav ul li a {
 @media (max-width: 768px) {
   .apresentacao {
     background-image: url("./assets/homewppmobile.jpg");
-    height: 880px;
+    height: 900px;
   }
   header nav ul {
     gap: 2rem;
@@ -376,7 +376,7 @@ header nav ul li a {
 @media (max-width: 568px) {
   .apresentacao {
     width: 100%;
-    height: 880px;
+    height: 900px;
   }
   .apresentacao h1.slogan {
     font-size: 20px;
