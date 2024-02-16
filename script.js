@@ -1,7 +1,7 @@
 window.sr = ScrollReveal({ reset: true })
 
-sr.reveal("#menu", {duration: 1500})
-sr.reveal(".slogan", {duration: 1500})
+sr.reveal("#menu", {duration: 1500, delay: 110})
+sr.reveal(".slogan", {duration: 1500, delay: 200})
 
 window.addEventListener('scroll',()=>{
     document.querySelector("header").classList.toggle("Header_roll", window.scrollY > 0)
