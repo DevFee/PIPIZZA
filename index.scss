@@ -17,7 +17,7 @@ $bc5: #2f2f2f33;
 $bc6: #44444433;
 $sh1: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.05);
 $sh2: 0.4rem 0.3rem 0.8rem rgba(0, 0, 0, 0.09);
-$sh3: 0rem 0.3rem 0.6rem rgba(0, 0, 0, 0.597);
+$sh3: 0rem 0.3rem 0.7rem rgba(0, 0, 0, 0.26);
 
 *{
     margin: 0;
@@ -347,7 +347,7 @@ header{
     left: 50%;
     position: fixed;
     transform: translate(-50%, -50%);
-    background: rgba(224, 224, 224, 0.415);
+    background: rgba(168, 168, 168, 0.527);
     box-shadow: $sh3;
     backdrop-filter: blur(10px);
     padding: 2rem 6rem;
@@ -355,6 +355,7 @@ header{
     h1{
         text-align: center;
         z-index: 1;
+        color: white;
         font-family: sans-serif;
         font-weight: bold;
     }
