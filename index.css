@@ -6,17 +6,17 @@
 }
 
 :root {
-  background: rgba(251, 251, 251, 0.5607843137);
+  background: rgba(255, 255, 255, 0.9960784314);
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;
   overflow-x: hidden;
 }
 
 .Header_roll {
-  background: rgba(251, 251, 251, 0.5607843137);
+  background: rgba(243, 243, 243, 0.6980392157);
   transition: all 0.5s;
-  -webkit-backdrop-filter: blur(28px);
-          backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
 }
 .Header_roll h1 a {
   color: #3e3e3e;
@@ -107,7 +107,7 @@ header nav ul li a {
   align-items: center;
   background: url("./assets/homewpp.jpg");
   width: 100%;
-  height: 650px;
+  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -308,44 +308,6 @@ header nav ul li a {
   background: rgb(183, 0, 183);
 }
 
-.popup {
-  scale: 0;
-  transition: all 0.5s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  top: 50%;
-  left: 50%;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  background: rgba(210, 210, 210, 0.527);
-  box-shadow: 0rem 0.3rem 0.7rem rgba(0, 0, 0, 0.26);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  padding: 2rem 6rem;
-  border-radius: 1rem;
-}
-.popup h1 {
-  text-align: center;
-  z-index: 1;
-  color: white;
-  font-family: sans-serif;
-  font-weight: bold;
-}
-.popup button {
-  transition: all 0.5s;
-  margin: 30px 0 0 0;
-  font-size: 28px;
-  padding: 0.8rem 3rem;
-  border: 2px solid rgb(0, 255, 55);
-  background: rgb(0, 255, 55);
-  color: white;
-  font-weight: 600;
-  border-radius: 1rem;
-  cursor: pointer;
-}
-
 @media (max-width: 1068px) {
   header {
     height: 75px;
@@ -363,7 +325,6 @@ header nav ul li a {
 @media (max-width: 768px) {
   .apresentacao {
     background-image: url("./assets/homewppmobile.jpg");
-    height: 900px;
   }
   header nav ul {
     gap: 2rem;
@@ -374,10 +335,6 @@ header nav ul li a {
   }
 }
 @media (max-width: 568px) {
-  .apresentacao {
-    width: 100%;
-    height: 920px;
-  }
   .apresentacao h1.slogan {
     font-size: 20px;
   }
@@ -402,23 +359,64 @@ header nav ul li a {
 }
 @media (max-width: 425px) {
   .apresentacao h1.slogan {
-    font-size: 18px;
+    font-size: 16px;
+  }
+  header {
+    gap: 14px;
+  }
+  header nav ul {
+    gap: 8px;
+  }
+  header nav ul li a {
+    font-size: 13.5px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 320px) {
   header {
     gap: 0px;
   }
   header h1 a {
     padding: 0 1rem;
-  }
-  header nav ul {
-    gap: 10px;
+    font-size: 18px;
   }
   header nav ul li {
     padding: 0.5rem;
   }
   header nav ul li a {
+    font-size: 10.5px;
+  }
+  .apresentacao h1 {
+    font-size: 16px;
+  }
+  .apresentacao .destaque {
+    font-size: 26px;
+  }
+  #menu h2 {
+    font-size: 22px;
+  }
+  #menu .Pizzas .card img {
+    width: 100%;
+    height: 220px;
+  }
+  #menu .Pizzas .card .foto-nome {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  #menu .Pizzas .card .foto-nome h1 {
+    text-align: center;
+    font-size: 40px;
+  }
+  #menu .Pizzas .card .descricao h1 {
+    font-size: 14px;
+  }
+  #menu .Pizzas .card .descricao h4 {
+    font-size: 13px;
+  }
+  #menu .Pizzas .card .descricao p {
     font-size: 12px;
+  }
+  #menu .Pizzas .card a {
+    font-size: 17px;
   }
 }/*# sourceMappingURL=index.css.map */

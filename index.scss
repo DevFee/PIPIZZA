@@ -10,7 +10,7 @@ $hoverbc2: #d4d4d483;
 $hoverpc1: #2d2d2d;
 $bc4: #ffffff;
 $bc1: #fffffffe;
-$bc2: #fbfbfb8f;
+$bc2: #f3f3f3b2;
 $bc3: #e4e4e4;
 $bc4: #0f1016;
 $bc5: #2f2f2f33;
@@ -27,7 +27,7 @@ $sh3: 0rem 0.3rem 0.7rem rgba(0, 0, 0, 0.26);
 }
 
 :root{
-    background: $bc2;
+    background: $bc1;
     scroll-behavior: smooth;
     scroll-padding-top: 4rem;
     overflow-x: hidden;
@@ -36,7 +36,7 @@ $sh3: 0rem 0.3rem 0.7rem rgba(0, 0, 0, 0.26);
 .Header_roll{
     background: $bc2;
     transition: all 0.5s;
-    backdrop-filter: blur(28px);
+    backdrop-filter: blur(20px);
     h1{
         a{
             color: $pc3;
@@ -46,6 +46,7 @@ $sh3: 0rem 0.3rem 0.7rem rgba(0, 0, 0, 0.26);
         ul{
             li{
                 a{
+
                     border: 1px solid $pc3;
                     color: $pc3;
                     &:hover{
@@ -141,7 +142,7 @@ header{
     align-items: center;
     background: url("./assets/homewpp.jpg");
     width: 100%;
-    height: 650px;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -337,42 +338,42 @@ header{
     }
 }
 
-.popup{
-    scale: 0;
-    transition: all 0.5s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    top: 50%;
-    left: 50%;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    background: rgba(210, 210, 210, 0.527);
-    box-shadow: $sh3;
-    backdrop-filter: blur(10px);
-    padding: 2rem 6rem;
-    border-radius: 1rem;
-    h1{
-        text-align: center;
-        z-index: 1;
-        color: white;
-        font-family: sans-serif;
-        font-weight: bold;
-    }
-    button{
-        transition: all 0.5s;
-        margin: 30px 0 0 0;
-        font-size: 28px;
-        padding: 0.8rem 3rem;
-        border: 2px solid rgb(0, 255, 55);
-        background: rgb(0, 255, 55);
-        color: white;
-        font-weight: 600;
-        border-radius: 1rem;
-        cursor: pointer;
-    }
-}
+// .popup{
+//     scale: 0;
+//     transition: all 0.5s;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     flex-direction: column;
+//     top: 50%;
+//     left: 50%;
+//     position: fixed;
+//     transform: translate(-50%, -50%);
+//     background: rgba(210, 210, 210, 0.527);
+//     box-shadow: $sh3;
+//     backdrop-filter: blur(10px);
+//     padding: 2rem 6rem;
+//     border-radius: 1rem;
+//     h1{
+//         text-align: center;
+//         z-index: 1;
+//         color: white;
+//         font-family: sans-serif;
+//         font-weight: bold;
+//     }
+//     button{
+//         transition: all 0.5s;
+//         margin: 30px 0 0 0;
+//         font-size: 28px;
+//         padding: 0.8rem 3rem;
+//         border: 2px solid rgb(0, 255, 55);
+//         background: rgb(0, 255, 55);
+//         color: white;
+//         font-weight: 600;
+//         border-radius: 1rem;
+//         cursor: pointer;
+//     }
+// }
 
 @media (max-width: 1068px){
     header{
@@ -398,7 +399,6 @@ header{
 @media (max-width: 768px) {
     .apresentacao{
         background-image: url('./assets/homewppmobile.jpg');
-        height: 900px;
     }
     header{
         nav{
@@ -417,8 +417,6 @@ header{
 
 @media (max-width: 568px) {
     .apresentacao{
-        width: 100%;
-        height: 920px;
         h1.slogan{
             font-size: 20px;
         }
@@ -451,27 +449,84 @@ header{
 @media (max-width: 425px){
     .apresentacao{
         h1.slogan{
-            font-size: 18px;
+            font-size: 16px;
+        }
+    }
+    header{
+        gap: 14px;
+        nav{
+            ul{
+                gap: 8px;
+                li{
+                    a{
+                        font-size: 13.5px;
+                    }
+                }
+            }
         }
     }
 }
 
-@media (max-width: 380px){
+@media (max-width: 320px){
     header{
         gap: 0px;
         h1{
             a{
                 padding: 0 1rem;
+                font-size: 18px;
             }
         }
         nav{
             ul{
-                gap: 10px;
                 li{
                     padding: 0.5rem;
                     a{
+                        font-size: 10.5px;
+                    }
+                }
+            }
+        }
+    }
+    .apresentacao{
+        h1{
+            font-size: 16px;
+        }
+        .destaque{
+            font-size: 26px;
+        }
+    }
+    #menu{
+        h2{
+            font-size: 22px;
+        }
+        .Pizzas{
+            .card{
+                img{
+                    width: 100%;
+                    height: 220px;
+                }
+                .foto-nome{
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    h1{
+                        text-align: center;
+                        font-size: 40px;
+                    }
+                }
+                .descricao{
+                    h1{
+                        font-size: 14px;
+                    }
+                    h4{
+                        font-size: 13px;
+                    }
+                    p{
                         font-size: 12px;
                     }
+                }
+                a{
+                    font-size: 17px;
                 }
             }
         }

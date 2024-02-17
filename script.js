@@ -13,10 +13,10 @@ function copygmail(){
     })
 }
 
-function fecharpopup(){
-    document.querySelector(".popup").style.scale = 0
-}
+// function fecharpopup(){
+//     document.querySelector(".popup").style.scale = 0
+// }
 
-function aparecerpopup(){
-    document.querySelector(".popup").style.scale = 1
-}
+// function aparecerpopup(){
+//     document.querySelector(".popup").style.scale = 1
+// }
