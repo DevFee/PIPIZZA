@@ -12,6 +12,7 @@
     <title>PIPIZZA</title>
     <link rel="shortcut icon" href="./assets/PIPIZZALOGO.png" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
+    <script src="./cart.js"></script>
 </head>
 <body>
     <header>
@@ -21,7 +22,7 @@
         <nav>
             <ul class="menuHeader">
                 <li class="opcao-menu-header"><a href="#menu">Pizzas</a></li>
-                <li class="opcao-menu-header"><a href="#contato">Contato</a></li>
+                <li class="opcao-menu-header"><a onclick="showCart()">Carrinho</a></li>
             </ul>
         </nav>
     </header>
@@ -53,7 +54,7 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a onclick="{setTimeout(()=>{alert('Compra realizada!')},600)}">Comprar!</a>
+                <a value="Calabresa;24,99;./assets/calabresa.jpg" onclick="addItem(this);renderCart()">Comprar!</a>
             </section>
             <section class="card">
                 <img src="./assets/catupiry.jpg" alt="" srcset="">
@@ -73,7 +74,7 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a onclick="{setTimeout(()=>{alert('Compra realizada!')},600)}">Comprar!</a>
+                <a value="Catupiry;29,99;./assets/catupiry.jpg" onclick="addItem(this);renderCart()">Comprar!</a>
             </section>
             <section class="card">
                 <img src="./assets/4queijos.jpg" alt="" srcset="">
@@ -93,7 +94,7 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a onclick="{setTimeout(()=>{alert('Compra realizada!')},600)}">Comprar!</a>
+                <a value="4 Queijos;29,99;./assets/4queijos.jpg" onclick="addItem(this);renderCart()">Comprar!</a>
             </section>
             <section class="card">
                 <img src="./assets/amoda.jpg" alt="" srcset="">
@@ -113,7 +114,7 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a onclick="{setTimeout(()=>{alert('Compra realizada!')},600)}">Comprar!</a>
+                <a value="A moda;34,99;./assets/amoda.jpg" onclick="addItem(this);renderCart()">Comprar!</a>
             </section>
             <section class="card">
                 <img src="./assets/marguerita.jpg" alt="" srcset="">
@@ -133,7 +134,7 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a onclick="{setTimeout(()=>{alert('Compra realizada!')},600)}">Comprar!</a>
+                <a value="Marguerita;19,99;./assets/marguerita.jpg" onclick="addItem(this);renderCart()">Comprar!</a>
             </section>
             <section class="card">
                 <img src="./assets/mussarela.jpg" alt="" srcset="">
@@ -153,7 +154,7 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a onclick="{setTimeout(()=>{alert('Compra realizada!')},600)}">Comprar!</a>
+                <a value="Mussarela;27,99;./assets/mussarela.jpg" onclick="addItem(this);renderCart()">Comprar!</a>
             </section>
         </article>
     </section>
@@ -170,10 +171,11 @@
         </article>
         <h6>© 2023 DevFee</h6>
     </footer>
-    <!-- POPUP Descartado <div class="popup">
-        <h1>Compra realizada!</h1>
-        <button onclick="{alert('Compra realizada')}">Fechar</button>
-    </div> -->
+    <article class="cart">
+        <ul id="clist" class="clist">
+            <!-- Itens do carrinho serão adicionados dinamicamente -->
+        </ul>
+    </article>
     
     <script src="./script.js"></script>
 </body>
