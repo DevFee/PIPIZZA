@@ -432,6 +432,7 @@ header nav ul li a {
   }
   .cart {
     bottom: 0;
+    height: calc(100vh - 65px);
     width: 100vw;
   }
 }
