@@ -431,6 +431,7 @@ header nav ul li a {
     padding: 0.6rem 2rem;
   }
   .cart {
+    bottom: 0;
     width: 100vw;
   }
 }
