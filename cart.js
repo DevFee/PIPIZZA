@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showCart() {
         const cartElement = document.querySelector(".cart");
-        if (cartElement.style.display === "flex") {
-            cartElement.style.display = "none";
+        if (cartElement.style.right <= "-100vw") {
+            cartElement.style.right = "0px";
         } else {
-            cartElement.style.display = "flex";
+            cartElement.style.right = "-100vw";
         }
-        
+
         if (cart.length <= 0) {
             console.log('Carrinho vazio :(');
         } else {
@@ -18,12 +18,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function addItem(e) {
         const value = e.getAttribute('value');
+        const popup = document.getElementById("sucessPopUp");
 
         if (!value) {
             console.error('Valor não definido!');
             return;
         }
-
+        document.querySelectorAll('a').forEach(function (element) {
+            element.style.pointerEvents = "none";
+        });
         const [itemName, itemValue, photoUrl] = value.split(';');
 
         const product = {
@@ -48,11 +51,24 @@ document.addEventListener("DOMContentLoaded", function () {
         };
         console.log(`Valor total: R$ ${total().toFixed(2)}`);
 
+        if (popup) {
+            popup.classList.add("animatePopUp");
+
+            setTimeout(() => {
+                popup.classList.remove("animatePopUp");
+                document.querySelectorAll('a').forEach(function (element) {
+                    element.style.pointerEvents = "all";
+                });
+            }, 2500);
+        }
+
         renderCart();
     }
 
     function renderCart() {
         const cartlist = document.querySelector(".clist");
+        const totalValueHTML = document.getElementById("cartTotalValue");
+
         if (!cartlist) {
             console.error("Elemento .clist não encontrado!");
             return;
@@ -64,19 +80,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 cartlist.innerHTML += `
                     <li class="cartItem">
                         <div class="cartItemImage">
-                            <img src="${item.url}" alt="foto pizza de ${item.name}">
+                            <img src="${item.url}" alt="foto de ${item.name}">
                         </div>
                         <div class="cartItemInfo">
-                            <h1>${item.name}</h1>
-                            <h1>R$ ${(item.value * item.quantity).toFixed(2)}</h1>
+                            <span class="itemNameAndPrice">
+                                <h1>${item.name}</h1>
+                                <h1 class="cartItemPrice">R$ ${(item.value * item.quantity).toFixed(2)}</h1>
+                            </span>
                             <p>Quantidade: ${item.quantity}</p>
                         </div>
                         <button onclick="removeItem('${item.key}')">Remover item</button>
                     </li>
                 `.trim();
             });
+
+            let total = () => {
+                return cart.reduce((sum, item) => sum + (item.value * item.quantity), 0);
+            };
+            totalValueHTML.innerText = `Valor total: R$ ${total().toFixed(2)}`;
         } else {
             cartlist.innerHTML = '<h1>Carrinho vazio :(</h1>';
+            totalValueHTML.innerText = ``;
         }
     }
 

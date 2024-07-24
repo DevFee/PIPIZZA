@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;1,400;1,500&family=Kalnia:wght@100;200;300&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-    <title>PIPIZZA</title>
+    <title>Pipizza!</title>
     <link rel="shortcut icon" href="./assets/PIPIZZALOGO.png" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
     <script src="./cart.js"></script>
+    <script src="./codes.js"></script>
 </head>
 <body>
     <header>
@@ -54,7 +55,7 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a value="Calabresa;24,99;./assets/calabresa.jpg" onclick="addItem(this);renderCart()">Comprar!</a>
+                <a value="Calabresa;24,99;./assets/calabresa.jpg" onclick="addItem(this);renderCart()">Adicionar ao carrinho!</a>
             </section>
             <section class="card">
                 <img src="./assets/catupiry.jpg" alt="" srcset="">
@@ -74,7 +75,7 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a value="Catupiry;29,99;./assets/catupiry.jpg" onclick="addItem(this);renderCart()">Comprar!</a>
+                <a value="Catupiry;29,99;./assets/catupiry.jpg" onclick="addItem(this);renderCart()">Adicionar ao carrinho!</a>
             </section>
             <section class="card">
                 <img src="./assets/4queijos.jpg" alt="" srcset="">
@@ -94,7 +95,7 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a value="4 Queijos;29,99;./assets/4queijos.jpg" onclick="addItem(this);renderCart()">Comprar!</a>
+                <a value="4 Queijos;29,99;./assets/4queijos.jpg" onclick="addItem(this);renderCart()">Adicionar ao carrinho!</a>
             </section>
             <section class="card">
                 <img src="./assets/amoda.jpg" alt="" srcset="">
@@ -114,7 +115,7 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a value="A moda;34,99;./assets/amoda.jpg" onclick="addItem(this);renderCart()">Comprar!</a>
+                <a value="A moda;34,99;./assets/amoda.jpg" onclick="addItem(this);renderCart()">Adicionar ao carrinho!</a>
             </section>
             <section class="card">
                 <img src="./assets/marguerita.jpg" alt="" srcset="">
@@ -134,7 +135,7 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a value="Marguerita;19,99;./assets/marguerita.jpg" onclick="addItem(this);renderCart()">Comprar!</a>
+                <a value="Marguerita;19,99;./assets/marguerita.jpg" onclick="addItem(this);renderCart()">Adicionar ao carrinho!</a>
             </section>
             <section class="card">
                 <img src="./assets/mussarela.jpg" alt="" srcset="">
@@ -154,7 +155,7 @@
                         inventore tempore.
                     </p>
                 </div>
-                <a value="Mussarela;27,99;./assets/mussarela.jpg" onclick="addItem(this);renderCart()">Comprar!</a>
+                <a value="Mussarela;27,99;./assets/mussarela.jpg" onclick="addItem(this);renderCart()">Adicionar ao carrinho!</a>
             </section>
         </article>
     </section>
@@ -175,7 +176,12 @@
         <ul id="clist" class="clist">
             <!-- Itens do carrinho serão adicionados dinamicamente -->
         </ul>
+        <h2 id="cartTotalValue">Valor total: R$ 0,00</h2>
     </article>
+
+    <div id="sucessPopUp" class="sucessPopUp">
+        <h4>Produto adicionado ao carrinho com sucesso!</h4>
+    </div>
     
     <script src="./script.js"></script>
 </body>
