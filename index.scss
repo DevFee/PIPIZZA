@@ -23,7 +23,7 @@ $sh3: 0rem 0.3rem 0.7rem rgba(0, 0, 0, 0.26);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
 :root{
@@ -34,7 +34,7 @@ $sh3: 0rem 0.3rem 0.7rem rgba(0, 0, 0, 0.26);
 }
 
 .Header_roll{
-    background: $bc2;
+    background: white;
     transition: all 0.5s;
     backdrop-filter: blur(20px);
     h1{
@@ -63,7 +63,7 @@ header{
     width: 100%;
     height: fit-content;
     top: 0;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.434);
     backdrop-filter: blur(8px);
     transition: all 0.5s;
     position: fixed;
@@ -340,39 +340,81 @@ header{
 }
 
 .cart{
-    padding: 1rem 0.5rem;
-    transition: all 0.5s;
     flex-direction: column;
-    text-align: center;
-    background: $bc1;
+    box-shadow: $sh3;
+    background: rgba(255, 255, 255);
     transition: all 0.8s;
     backdrop-filter: blur(20px);
     position: fixed;
     bottom: 0%;
-    width: calc(100vw / 2);
-    right: -100vw;
+    width: calc(100vw / 3.75);
+    right: -110vw;
     display: flex;
     height: calc(100vh - 70px);
     overflow-y: scroll;
+    text-align: center;
     overflow-x: hidden;
-    h1{
-        text-align: center;
+    div{
+        display: flex;
+        padding: 1rem 2rem;
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #8b8b8b38;
+        .cartStats{
+            font-size: 22px;
+            font-weight: 800;
+        }
+        button{
+            background: #717171;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            position: relative;
+            padding: 0.75rem;
+            &::after, &::before{
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 13px;
+                background: white;
+                left: 45%;
+                top: 23%;
+                transform: translate(-50%, -50%);
+                transition: all 0.5s;
+                display: block;
+                z-index: 1;
+            }
+            &::after{
+                transform: rotate(45deg);
+            }
+            &::before{
+                transform: rotate(-45deg);
+            }
+        }
     }
     ul{
         display: flex;
+        padding: 1rem 0;
         flex-wrap: wrap;
+        align-items: center;
+        row-gap: 1rem;
+        justify-content: space-evenly;
         .cartItem{
             width: fit-content;
+            box-shadow: $sh1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
+            border-radius: 1rem;
             padding: 1.5rem 2rem;
             .cartItemImage{
                 width: 100%;
                 img{
                     width: 200px;
-                    height: 150px;
+                    height: 170px;
                     border-radius: 1rem;
                 }
             }
@@ -382,16 +424,26 @@ header{
                 flex-direction: column;
                 justify-content: space-between;
                 font-size: 14px;
-                .itemNameAndPrice{
+                .itemNameAndQuantity{
+                    margin: 10px 0 0 0;
                     width: 100%;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    .cartItemPrice{
-                        color: #8c8c8c;
-                        font-weight: 200;
-                        font-size: 16px;
+                    h1{
+                        color: #242424;
+                        font-weight: 600;
+                        font-size: 17px;
                     }
+                }
+                .cartItemPrice{
+                    margin-top: 20px;
+                    color: #242424;
+                    font-weight: 200;
+                    font-size: 14px;
+                }
+                p{
+                    text-align: center;
                 }
             }
         }
@@ -416,6 +468,7 @@ header{
     display: block;
     animation: linear showPopUp 2.5s;
 }
+
 
 @keyframes showPopUp{
     0% {
@@ -477,8 +530,8 @@ header{
         }
     }
     .cart{
-        bottom: 0;
-        height: calc(100vh - 65px);
+        height: 100vh;
+        z-index: 2;
         width: 100vw;
     }
 }

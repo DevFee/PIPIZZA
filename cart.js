@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showCart() {
         const cartElement = document.querySelector(".cart");
-        if (cartElement.style.right <= "-100vw") {
+        if (cartElement.style.right <= "-110vw") {
             cartElement.style.right = "0px";
         } else {
-            cartElement.style.right = "-100vw";
+            cartElement.style.right = "-110vw";
         }
 
         if (cart.length <= 0) {
@@ -14,6 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             console.dir(localStorage.getItem('cart'));
         }
+    }
+
+    function closeCart() {
+        const cartElement = document.querySelector(".cart");
+        cartElement.style.right = "-110vw";
     }
 
     function addItem(e) {
@@ -66,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function renderCart() {
+        const cartStats = document.querySelector(".cartStats");
         const cartlist = document.querySelector(".clist");
         const totalValueHTML = document.getElementById("cartTotalValue");
 
@@ -83,11 +89,11 @@ document.addEventListener("DOMContentLoaded", function () {
                             <img src="${item.url}" alt="foto de ${item.name}">
                         </div>
                         <div class="cartItemInfo">
-                            <span class="itemNameAndPrice">
+                            <span class="itemNameAndQuantity">
                                 <h1>${item.name}</h1>
-                                <h1 class="cartItemPrice">R$ ${(item.value * item.quantity).toFixed(2)}</h1>
+                                <h1>${item.quantity}</h1>
                             </span>
-                            <p>Quantidade: ${item.quantity}</p>
+                            <h1 class="cartItemPrice">R$ ${(item.value * item.quantity).toFixed(2)}</h1>
                         </div>
                         <button onclick="removeItem('${item.key}')">Remover item</button>
                     </li>
@@ -99,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
             };
             totalValueHTML.innerText = `Valor total: R$ ${total().toFixed(2)}`;
         } else {
-            cartlist.innerHTML = '<h1>Carrinho vazio :(</h1>';
             totalValueHTML.innerText = ``;
         }
     }
@@ -116,10 +121,17 @@ document.addEventListener("DOMContentLoaded", function () {
         renderCart();
     }
 
+    function clearCart() {
+        cart = [];
+        renderCart();
+    }
+
     renderCart();
 
     window.showCart = showCart;
     window.addItem = addItem;
     window.renderCart = renderCart;
     window.removeItem = removeItem;
+    window.clearCart = clearCart;
+    window.closeCart = closeCart;
 });
