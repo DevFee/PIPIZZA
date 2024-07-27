@@ -589,6 +589,8 @@ header nav ul li a {
   }
   .cart {
     width: 55.5555555556vw;
+    height: calc(100vh - 75px);
+    bottom: 0;
   }
 }
 @media (max-width: 425px) {

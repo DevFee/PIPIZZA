@@ -673,6 +673,8 @@ header{
     }
     .cart{
         width: calc(100vw / 1.8);
+        height: calc(100vh - 75px);
+        bottom: 0;
     }
 }
 
