@@ -1,9 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
     let cart = [];
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+        try {
+            cart = JSON.parse(storedCart);
+        } catch (e) {
+            console.error("Erro ao analisar os dados do carrinho do localStorage:", e);
+        }
+    }
 
     function showCart() {
         const cartElement = document.querySelector(".cart");
-        if (cartElement.style.right <= "-110vw") {
+        if (cartElement.style.right === "-110vw" || cartElement.style.right === "") {
             cartElement.style.right = "0px";
         } else {
             cartElement.style.right = "-110vw";
@@ -12,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (cart.length <= 0) {
             console.log('Carrinho vazio :(');
         } else {
-            console.dir(localStorage.getItem('cart'));
+            console.dir(cart);
         }
     }
 
@@ -39,20 +47,20 @@ document.addEventListener("DOMContentLoaded", function () {
             value: parseFloat(itemValue.replace(',', '.')),
             url: photoUrl,
             key: itemName,
-            quantity: 1
+            amount: 1
         };
 
         const existingProductIndex = cart.findIndex(item => item.name === itemName);
         if (existingProductIndex !== -1) {
-            cart[existingProductIndex].quantity += 1;
+            cart[existingProductIndex].amount += 1;
         } else {
             cart.push(product);
         }
 
-        console.log(cart);
+        console.log(product.key);
 
         const total = () => {
-            return cart.reduce((sum, item) => sum + (item.value * item.quantity), 0);
+            return cart.reduce((sum, item) => sum + (item.value * item.amount), 0);
         };
         console.log(`Valor total: R$ ${total().toFixed(2)}`);
 
@@ -67,13 +75,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 2500);
         }
 
+        localStorage.setItem('cart', JSON.stringify(cart));
         renderCart();
     }
 
     function renderCart() {
         const cartStats = document.querySelector(".cartStats");
         const cartlist = document.querySelector(".clist");
-        const totalValueHTML = document.getElementById("cartTotalValue");
+        const paybtn = document.getElementById("cartPayButton");
 
         if (!cartlist) {
             console.error("Elemento .clist não encontrado!");
@@ -85,44 +94,53 @@ document.addEventListener("DOMContentLoaded", function () {
             cart.forEach(item => {
                 cartlist.innerHTML += `
                     <li class="cartItem">
-                        <div class="cartItemImage">
-                            <img src="${item.url}" alt="foto de ${item.name}">
-                        </div>
-                        <div class="cartItemInfo">
-                            <span class="itemNameAndQuantity">
-                                <h1>${item.name}</h1>
-                                <h1>${item.quantity}</h1>
-                            </span>
-                            <h1 class="cartItemPrice">R$ ${(item.value * item.quantity).toFixed(2)}</h1>
-                        </div>
-                        <button onclick="removeItem('${item.key}')">Remover item</button>
+                        <article>
+                            <img src="${item.url}" alt="Pizza de ${item.name}" srcset="">
+                            <section>
+                                <article class="cartItemName">
+                                    <h4>${item.name}</h4>
+                                </article>
+                                <article class="cartItemInfo">
+                                    <h6>15 min</h6>
+                                    <h6 class="cartItemIsReady">Pronto para entrega!</h6>
+                                </article>
+                                <article class="cartItemValueAndOp">
+                                    <p>R$ ${(item.value.toFixed(2) * item.amount).toFixed(2)}</p>
+                                    <article class="cartItemOptions">
+                                            <h5>${item.amount}</h5>
+                                            <button onclick="removeItem('${item.key}')">-1</button>
+                                            <button value="${item.name};${item.value};${item.url}" onclick="addItem(this)">+1</button>
+                                    </article>
+                                </article>
+                            </section>
+                        </article>
                     </li>
-                `.trim();
+                `;
             });
 
-            let total = () => {
-                return cart.reduce((sum, item) => sum + (item.value * item.quantity), 0);
-            };
-            totalValueHTML.innerText = `Valor total: R$ ${total().toFixed(2)}`;
+            const total = cart.reduce((sum, item) => sum + (item.value * item.amount), 0);
+            paybtn.innerText = `Pagar R$ ${total.toFixed(2)}`;
         } else {
-            totalValueHTML.innerText = ``;
+            paybtn.innerText = `Pagar R$ 0,00`;
         }
     }
 
     function removeItem(key) {
         const itemIndex = cart.findIndex(item => item.key === key);
         if (itemIndex !== -1) {
-            if (cart[itemIndex].quantity > 1) {
-                cart[itemIndex].quantity -= 1;
+            if (cart[itemIndex].amount > 1) {
+                cart[itemIndex].amount -= 1;
             } else {
                 cart.splice(itemIndex, 1);
             }
         }
+        localStorage.setItem('cart', JSON.stringify(cart));
         renderCart();
     }
 
     function clearCart() {
         cart = [];
+        localStorage.setItem('cart', JSON.stringify(cart));
         renderCart();
     }
 
