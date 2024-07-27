@@ -586,8 +586,7 @@ header{
 @media (max-width: 860px){
     .cart{
         width: calc(100vw / 2.3);
-        height: calc(100vh - 75px);
-        bottom: 0;
+        top: 75px;
     }
 }
 
@@ -673,8 +672,6 @@ header{
     }
     .cart{
         width: calc(100vw / 1.8);
-        height: calc(100vh - 75px);
-        bottom: 0;
     }
 }
 
