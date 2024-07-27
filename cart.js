@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const cartStats = document.querySelector(".cartStats");
         const cartlist = document.querySelector(".clist");
         const paybtn = document.getElementById("cartPayButton");
+        const emptyCartdiv = document.querySelector(".cartEmpty");
 
         if (!cartlist) {
             console.error("Elemento .clist não encontrado!");
@@ -119,9 +120,12 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             const total = cart.reduce((sum, item) => sum + (item.value * item.amount), 0);
+            emptyCartdiv.style.display = 'none';
+            paybtn.style.display = 'block';
             paybtn.innerText = `Pagar R$ ${total.toFixed(2)}`;
         } else {
-            paybtn.innerText = `Pagar R$ 0,00`;
+            paybtn.style.display = 'none';
+            emptyCartdiv.style.display = 'flex';
         }
     }
 

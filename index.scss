@@ -474,6 +474,7 @@ header{
     #cartPayButton{
         max-width: fit-content;
         padding: 0.3rem 2rem;
+        display: none;
         margin: 20px 0;
         border: 1px solid rgb(20, 252, 63);
         background: rgba(255, 255, 255, 0.594);
@@ -484,6 +485,17 @@ header{
         &:hover{
             background: rgb(0, 255, 47);
             color: white;
+        }
+    }
+    .cartEmpty{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        a{
+            text-decoration: none;
         }
     }
 }
@@ -574,6 +586,8 @@ header{
 @media (max-width: 860px){
     .cart{
         width: calc(100vw / 2.3);
+        height: calc(100vh - 65px);
+        bottom: 0;
     }
 }
 
