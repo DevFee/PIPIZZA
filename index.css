@@ -320,7 +320,7 @@ header nav ul li a {
           backdrop-filter: blur(20px);
   position: fixed;
   padding: 0 1rem;
-  bottom: 0%;
+  bottom: 0;
   width: 37.7358490566vw;
   right: -110vw;
   display: flex;
@@ -529,7 +529,7 @@ header nav ul li a {
 @media (max-width: 860px) {
   .cart {
     width: 43.4782608696vw;
-    height: calc(100vh - 65px);
+    height: calc(100vh - 75px);
     bottom: 0;
   }
 }
