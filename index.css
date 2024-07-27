@@ -436,6 +436,22 @@ header nav ul li a {
   cursor: pointer;
   padding: 0.3rem 1.25rem;
 }
+.cart #cartPayButton {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  padding: 0.3rem 2rem;
+  margin: 20px 0;
+  border: 1px solid rgb(20, 252, 63);
+  background: rgba(255, 255, 255, 0.594);
+  cursor: pointer;
+  border-radius: 0.4rem;
+  transition: all 0.5s;
+  align-self: center;
+}
+.cart #cartPayButton:hover {
+  background: rgb(0, 255, 47);
+  color: white;
+}
 
 .sucessPopUp {
   padding: 0.8rem 2rem;
